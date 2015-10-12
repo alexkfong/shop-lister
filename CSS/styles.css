@@ -1,0 +1,160 @@
+html {
+  /*Enable box-sizing for current and legacy browsers*/
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  
+  /*Enable anti-aliasing for typography in current browsers*/
+  -webkit-font-smoothing: antialiased;
+}
+
+*, *:before, *:after {
+  /*Enable box-sizing for current and legacy browsers*/
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+/*general rules for typography*/
+h1, h2, h3, h4, h5, h6, p, li, a, span, button, form, input {
+  font-family: "proxima-nova-soft", sans-serif;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+}
+
+p, input {
+  color: #545454;
+  line-height: 1.5em;
+  font-weight: 400;
+}
+
+.centerText {
+  text-align: center;
+}
+
+.floatRight {
+  float: right;
+}
+
+.displayInlineBlock,
+.listItemInterface > li,
+.purchasedItemInterface > li {
+  display: inline-block;
+}
+
+/* get rid of default margins and padding*/
+h1, h2, h3, h4, h5, h6, p, li, ul, a, span, img, div, section {
+  margin: 0;
+  padding: 0;
+}
+
+/*grid rules*/
+.grid1 { width: 50px; }
+.grid2 { width: 100px; }
+.grid3 { width: 150px; }
+.grid4 { width: 200px; }
+.grid5 { width: 250px; }
+.grid6 { width: 300px; }
+.grid7 { width: 350px; }
+.grid8 { width: 400px; }
+.grid9 { width: 450px; }
+.grid10 { width: 500px; }
+.grid11 { width: 550px; }
+.grid12 { width: 600px; }
+.grid13 { width: 650px; }
+.grid14 { width: 700px; }
+.grid15 { width: 750px; }
+.grid16 { width: 800px; }
+.grid17 { width: 850px; }
+.grid18 { width: 900px; }
+.grid19 { width: 950px; }
+.grid20 { width: 1000px; }
+.grid21 { width: 1050px; }
+.grid22 { width: 1100px; }
+.grid23 { width: 1150px; }
+.grid24 { width: 1200px; }
+
+/*spacing rules*/
+.spaceAbove10 { margin-top: 10px; }
+.spaceAbove20 { margin-top: 20px; }
+.spaceAbove30 { margin-top: 30px; }
+.spaceAbove40 { margin-top: 40px; }
+.spaceAbove50 { margin-top: 50px; }
+
+/*padding rules*/
+.paddingAbove10 { margin-top: 10px; }
+.paddingAbove20 { margin-top: 20px; }
+.paddingAbove30 { margin-top: 30px; }
+.paddingAbove40 { margin-top: 40px; }
+.paddingAbove50 { margin-top: 50px; }
+.paddingBelow50 { margin-bottom: 50px; }
+
+/*other general rules*/
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*masthead section*/
+.mastheadLogo {
+  width: 100px;
+}
+
+.mastheadThe {
+  font-size: 0.5em;
+  color: gray;
+}
+
+.mastheadList {
+  color: #ABC997;
+}
+
+/*instructions section*/
+.roundedRectangle {
+  padding: 5px;
+  background-color: #ABC997;
+  color: white;
+  font-weight: 600;
+
+  /*rounded border*/
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px; 
+  -khtml-border-radius: 5px;
+}
+
+#buttonReadInstructions {
+  display: none;
+}
+
+/*interface section*/
+input {
+  padding: 5px;
+  border: 1px solid lightGray;
+
+  /*rounded border*/
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px; 
+  -khtml-border-radius: 5px;
+}
+
+input:focus {
+  outline: 0;
+  border: 1px solid #ABC997;
+}
+
+#interfaceAddButton {
+  padding: 7px;
+}
+
+/*shopping list section*/
+
+.listItemInterface > li,
+.purchasedItemInterface > li {
+  text-align: right;
+  padding: 7px 14px 7px 14px;
+  margin-left: 3px;
+}
