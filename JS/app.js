@@ -2,7 +2,7 @@ $(document).ready( function() {
 	// Check to make sure JQuery is working
 	console.log("Ready!")
 
-	var itemsOnList = 0;
+	var itemsOnList = 1;
 	var itemsPurchased = 0;
 
 	// Hide instructions if clicked
@@ -28,14 +28,12 @@ $(document).ready( function() {
 		// Check if itemToAdd is valid.
 		if( !itemToAdd )
 		{
-
 			//if error message not displayed, display it
 			if( !$('#addListItem').next('p').length ) {
-				console.log("Fire error message just once.")
 				$('#addListItem').after("<p class=\"spaceAbove10 centerText hidden\">Please type in the name of the item</p>");
 				$('#addListItem').next('p').fadeToggle("fast","linear");
 			}
-			//flash the error message for UI
+			//otherwise flash the error message for UI
 			else
 			{
 				$('#addListItem').next('p').fadeToggle("fast","linear");
@@ -44,9 +42,20 @@ $(document).ready( function() {
 		}
 		// item is valid, now add to list
 		else {
-			console.log("The item you want to add is" + itemToAdd);
-			$('#addListItem').filter(':input').val("");
 			itemsOnList++; //increment itemsOnList
+			
+			//Append to shoppingList, with custom ID based on itemsOnList
+			$('.shoppingList').append("<div id=\"listedItem" + itemsOnList + "\" class=\"listItem grid12 spaceAbove20 hidden\"><input class=\"grid10 centerText\" type=\"text\" id=\"editListItem" + itemsOnList + "\" value=\"" + itemToAdd + "\" /><ul class=\"listItemInterface displayInlineBlock floatRight\"><li class=\"roundedRectangle\"><i class=\"fa fa-check-square\"></i></li><li class=\"roundedRectangle\"><i class=\"fa fa-trash-o\"></i></li></ul></div>");
+			$('#listedItem' + itemsOnList).fadeToggle("fast", "linear");
+
+			//delete text from input field
+			$('#addListItem').filter(':input').val("");
+
+			if( $('#addListItem').next('p').length ) {
+				$('#addListItem').next('p').fadeToggle("fast","linear");
+				$('#addListItem').next('p').remove();
+			}
+			
 		}
 	});
 });
