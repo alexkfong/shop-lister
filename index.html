@@ -9,8 +9,8 @@
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	
 	<!-- Link style sheets -->
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="CSS/normalize.css">
+	<link rel="stylesheet" href="CSS/styles.css">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 	<!-- CDN call to JQUERY -->
@@ -20,7 +20,7 @@
 	<script>!window.jQuery && document.write('<script src="js/jquery-2.1.4.min.js"><\/script>')</script>
   	
   	<!-- Link to my JavaScript -->
-  	<script src="app.js"></script>
+  	<script src="JS/app.js"></script>
 </head>
 <body class="paddingAbove50 paddingBelow50">
 	<header class="masthead grid12 center">
@@ -32,10 +32,13 @@
 	
 	<!-- App instructions for users here -->
 	<section class="instructions grid12 center spaceAbove20">
+		
 		<!-- Show instructions by default -->
-		<h2 class="centerText">Instructions</h2>
-		<p class="centerText spaceAbove10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At quas quae corrupti dolor! Laboriosam saepe harum, officia magnam eum dignissimos facilis ex, ad accusantium, quam neque, voluptatem at. Aliquid nulla voluptatibus praesentium mollitia at voluptate assumenda consequuntur tempora, repellat, sunt corrupti vitae iste tempore libero error accusantium animi, porro inventore, fugiat expedita reiciendis laudantium doloribus! Fugit aperiam repellendus architecto nemo enim ducimus quas consectetur, voluptatibus quae.</p>
-		<p class="roundedRectangle grid2 center centerText spaceAbove20">Hide</p>
+		<div ID="instructionsSection">
+			<h2 class="centerText">Instructions</h2>
+			<p class="centerText spaceAbove10">Add items to your shopping list by typing in the field and then clicking the <i class="fa fa-plus-circle"></i>. Click the <i class="fa fa-check-square"></i> next to items in your shopping list once you've bought it to move them off your list and onto your purchased list. Click the <i class="fa fa-times-circle"></i> to put items back into your shopping list. Delete items by clicking the <i class="fa fa-trash-o"></i>.</p>
+			<p id="hideButton" class="roundedRectangle grid2 center centerText spaceAbove20">Hide</p>
+		</div>
 
 		<!-- By default, hide button is hidden -->
 		<p id="buttonReadInstructions" class="roundedRectangle grid4 center centerText spaceAbove20">Read instructions</p>
@@ -50,7 +53,7 @@
 
 	<!-- 	Items on the shopping list are displayed here. Also, basic interface for manipulating the list will be here. -->
 	<section class="shoppingList grid12 spaceAbove30 center">			<h2 class="centerText">Your list</h2>
-		<div class="listItem grid12 spaceAbove20">
+		<div id="listedItem1" class="listItem grid12 spaceAbove20">
 			<input class="grid10 centerText" type="text" id="editListItem1" value="Existing Item" />
 			<ul class="listItemInterface displayInlineBlock floatRight">
 				<li class="roundedRectangle"><i class="fa fa-check-square"></i></li>
