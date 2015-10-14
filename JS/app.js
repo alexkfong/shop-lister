@@ -1,9 +1,7 @@
 $(document).ready( function() {
-	// Check to make sure JQuery is working
-	console.log("Ready!")
 
 	var itemsOnList = 0;
-	var itemsPurchased = 1;
+	var itemsPurchased = 0;
 
 	// Hide instructions if clicked
 	$('#hideButton').click( function() {
@@ -45,7 +43,7 @@ $(document).ready( function() {
 			itemsOnList++; //increment itemsOnList
 			
 			//Append to shoppingList, with custom ID based on itemsOnList
-			$('#shoppingList').append("<div id=\"listedItem" + itemsOnList + "\" class=\"listItem grid12 spaceAbove20 hidden\"><input class=\"grid12 centerText\" type=\"text\" id=\"editListItem" + itemsOnList + "\" value=\"" + itemToAdd + "\"></input></div>");
+			$('#shoppingList').append("<li id=\"listedItem" + itemsOnList + "\" class=\"listItem grid12 spaceAbove20 hidden\"><i class=\"fa fa-bars grid1 roundedRectangle leftRounded centerText\"></i><input class=\"grid11 rightRounded paddingRight50 centerText\" type=\"text\" id=\"editListItem" + itemsOnList + "\" value=\"" + itemToAdd + "\"/></li>");
 			$('#listedItem' + itemsOnList).fadeToggle("fast", "linear");
 
 			//delete text from input field
@@ -60,7 +58,8 @@ $(document).ready( function() {
 		}
 	});
 
-	$('#shoppingList').on("keyup", "div input", function(event) {
+	// delete an item from the shopping list
+	$('#shoppingList').on("keyup", "li input", function(event) {
 		
 		//If enter detected, begin delete process
 		if(event.keyCode == 13) {
@@ -69,7 +68,8 @@ $(document).ready( function() {
 		itemsOnList--;
 	});
 
-	$('#purchasedList').on("keyup", "div input", function(event) {
+	// delete an item from the purchased list
+	$('#purchasedList').on("keyup", "li input", function(event) {
 
 		//If enter detected, begin delete process
 		if(event.keyCode == 13) {
@@ -77,6 +77,12 @@ $(document).ready( function() {
 		}
 		itemsPurchased--;	
 	});
+
+	// Enable sorting
+	$( "#shoppingList, #purchasedList" ).sortable({
+      connectWith: ".connectedSortable"
+    });
+
 });
 
 // deleteListItem argument is a list item in the form of input.
@@ -88,8 +94,8 @@ function deleteListItem ( whichItem ) {
 			
 		//if text is deleted, delete the item
 		if( !$(whichItem).val() ) {
-			$(whichItem).parent('div').fadeToggle(300,"linear", function(){ 
-				$(whichItem).parent('div').remove();
+			$(whichItem).parent('li').fadeToggle(300,"linear", function(){ 
+				$(whichItem).parent('li').remove();
 			});								
 		}
 	}

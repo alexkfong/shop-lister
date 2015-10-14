@@ -34,6 +34,10 @@ p, input {
   font-weight: 400;
 }
 
+li {
+  list-style-type: none;
+}
+
 .centerText {
   text-align: center;
 }
@@ -87,13 +91,14 @@ h1, h2, h3, h4, h5, h6, p, li, ul, a, span, img, div, section {
 .spaceAbove40 { margin-top: 40px; }
 .spaceAbove50 { margin-top: 50px; }
 
-/*padding rules*/
+/*margin rules*/
 .paddingAbove10 { margin-top: 10px; }
 .paddingAbove20 { margin-top: 20px; }
 .paddingAbove30 { margin-top: 30px; }
 .paddingAbove40 { margin-top: 40px; }
 .paddingAbove50 { margin-top: 50px; }
-.paddingBelow50 { margin-bottom: 50px; }
+.paddingBelow50 { padding-bottom: 50px; }
+.paddingRight50 { padding-right: 50px; }
 
 /*other general rules*/
 .center {
@@ -166,8 +171,24 @@ input:focus {
 
 /*shopping list section*/
 
-.listItemInterface > li,
-.purchasedItemInterface > li {
-  padding: 7px 14px 7px 14px;
-  margin-left: 3px;
+#shoppingList > li > i,
+#purchasedList > li > i {
+  padding: 10px 0 10px 0;
 }
+
+.leftRounded {
+  /*rounded border*/
+  -moz-border-radius: 5px 0px 0px 5px;
+  -webkit-border-radius: 5px 0px 0px 5px;
+  border-radius: 5px 0px 0px 5px; 
+  -khtml-border-radius: 5px 0px 0px 5px;
+}
+
+.rightRounded {
+  /*rounded border*/
+  -moz-border-radius: 0 5px 5px 0;
+  -webkit-border-radius: 0 5px 5px 0;
+  border-radius: 0 5px 5px 0; 
+  -khtml-border-radius: 0 5px 5px 0;
+}
+

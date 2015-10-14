@@ -6,7 +6,10 @@ of per item UI. -->
 <!-- Features currently working
 1. Hideable instructions
 2. Adding items to regular list area
-3. Prevent empty strings from being added to the list -->
+3. Prevent empty strings from being added to the list 
+4. Delete items in both shopping and purchased lists
+5. You can check off items by clicking and dragging.
+6. Items may now also be sorted -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,6 +31,9 @@ of per item UI. -->
 
 	<!-- Switch to local if access to Google is restricted -->
 	<script>!window.jQuery && document.write('<script src="js/jquery-2.1.4.min.js"><\/script>')</script>
+	
+	<!-- Start up JQuery UI -->
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   	
   	<!-- Link to my JavaScript -->
   	<script src="JS/app.js"></script>
@@ -46,7 +52,7 @@ of per item UI. -->
 		<!-- Show instructions by default -->
 		<div ID="instructionsSection">
 			<h2 class="centerText">Instructions</h2>
-			<p class="centerText spaceAbove10">Add items to your shopping list by typing in the field and then clicking the <i class="fa fa-plus-circle"></i>. Delete items by removing the text and hitting the enter or return key. <!-- Click the <i class="fa fa-check-square"></i> next to items in your shopping list once you've bought it to move them off your list and onto your purchased list. Click the <i class="fa fa-times-circle"></i> to put items back into your shopping list. Delete items by clicking the <i class="fa fa-trash-o"></i>. --></p>
+			<p class="centerText spaceAbove10">Add items to your shopping list by typing in the field and then clicking the <i class="fa fa-plus-circle"></i>. Delete items by removing the text and hitting the enter or return key. Check off your items by clicking its handlebar and dragging it into the purchased list. You can also sort both lists by clicking and dragging.</p>
 			<p id="hideButton" class="roundedRectangle grid2 center centerText spaceAbove20">Hide</p>
 		</div>
 
@@ -62,32 +68,17 @@ of per item UI. -->
 	</section>
 
 	<!-- 	Items on the shopping list are displayed here. Also, basic interface for manipulating the list will be here. -->
-	<section ID="shoppingList" class="grid12 spaceAbove30 center">		<h2 class="centerText">Your list</h2>
-		<!-- <div id="listedItem1" class="listItem grid12 spaceAbove20">
-			Change class to grid10 when adding button feature
-			<input class="grid12 centerText" type="text" id="editListItem1" value="Existing Item"></input>
-			<ul class="listItemInterface displayInlineBlock floatRight">
-				<li class="roundedRectangle"><i class="fa fa-check-square"></i></li>
-				<li class="roundedRectangle"><i class="fa fa-trash-o"></i></li>
-			</ul>
-		</div> -->
+	<section class="grid12 spaceAbove30 center">		
+		<h2 class="centerText">Your list</h2>
+		<ul id="shoppingList" class="grid12 paddingBelow50 connectedSortable">
+		</ul>
 	</section>
 	
 	<!-- 	Items on the shopping list are displayed here. Also, basic interface for manipulating the list will be here. -->
-	<section ID="purchasedList" class="grid12 spaceAbove30 center">
+	<section class="grid12 spaceAbove30 center">
 		<h2 class="centerText">Purchased</h2>	
-
-		<!-- This implementation for list is stripped back version -->
-		<div class="purchasedItem grid12 spaceAbove20">	
-
-			<!-- Change class to grid10 when adding button feature -->
-			<input class="grid12 centerText" type="text" id="editPurchasedItem1" value="Purchased Item" />
-			<!-- <ul class="listItemInterface displayInlineBlock floatRight">
-				<li class="roundedRectangle"><i class="fa fa-times-circle"></i></li>
-				<li class="roundedRectangle"><i class="fa fa-trash-o"></i></li>
-			</ul> -->
-
-		</div>
+		<ul id="purchasedList" class="grid12 paddingBelow50 connectedSortable">
+		</ul>
 	</section>
 	<footer class="contactInformation grid12 spaceAbove30 center">
 	</footer>
