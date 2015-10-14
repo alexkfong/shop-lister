@@ -1,3 +1,13 @@
+<!-- the shopLISTer
+By Alex K. Fong for Thinkful's FEWD course
+This version simplifies the UI by removing implementation
+of per item UI. -->
+
+<!-- Features currently working
+1. Hideable instructions
+2. Adding items
+3. Prevent empty strings from being added to the list -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +46,7 @@
 		<!-- Show instructions by default -->
 		<div ID="instructionsSection">
 			<h2 class="centerText">Instructions</h2>
-			<p class="centerText spaceAbove10">Add items to your shopping list by typing in the field and then clicking the <i class="fa fa-plus-circle"></i>. Click the <i class="fa fa-check-square"></i> next to items in your shopping list once you've bought it to move them off your list and onto your purchased list. Click the <i class="fa fa-times-circle"></i> to put items back into your shopping list. Delete items by clicking the <i class="fa fa-trash-o"></i>.</p>
+			<p class="centerText spaceAbove10">Add items to your shopping list by typing in the field and then clicking the <i class="fa fa-plus-circle"></i>. <!-- Click the <i class="fa fa-check-square"></i> next to items in your shopping list once you've bought it to move them off your list and onto your purchased list. Click the <i class="fa fa-times-circle"></i> to put items back into your shopping list. Delete items by clicking the <i class="fa fa-trash-o"></i>. --></p>
 			<p id="hideButton" class="roundedRectangle grid2 center centerText spaceAbove20">Hide</p>
 		</div>
 
@@ -53,24 +63,34 @@
 
 	<!-- 	Items on the shopping list are displayed here. Also, basic interface for manipulating the list will be here. -->
 	<section class="shoppingList grid12 spaceAbove30 center">			<h2 class="centerText">Your list</h2>
+		
+		<!-- This implementation for list is stripped back version -->
 		<div id="listedItem1" class="listItem grid12 spaceAbove20">
-			<input class="grid10 centerText" type="text" id="editListItem1" value="Existing Item" />
-			<ul class="listItemInterface displayInlineBlock floatRight">
+			
+			<!-- Change class to grid10 when adding button feature -->
+			<input class="grid12 centerText" type="text" id="editListItem1" value="Existing Item" />
+			<!-- <ul class="listItemInterface displayInlineBlock floatRight">
 				<li class="roundedRectangle"><i class="fa fa-check-square"></i></li>
 				<li class="roundedRectangle"><i class="fa fa-trash-o"></i></li>
-			</ul>
+			</ul> -->
+
 		</div>
 	</section>
 	
 	<!-- 	Items on the shopping list are displayed here. Also, basic interface for manipulating the list will be here. -->
 	<section class="purchasedList grid12 spaceAbove30 center">
-		<h2 class="centerText">Purchased</h2>
-		<div class="purchasedItem grid12 spaceAbove20">
-			<input class="grid10 centerText" type="text" id="editPurchasedItem1" value="Purchased Item" />
-			<ul class="listItemInterface displayInlineBlock floatRight">
+		<h2 class="centerText">Purchased</h2>	
+
+		<!-- This implementation for list is stripped back version -->
+		<div class="purchasedItem grid12 spaceAbove20">	
+
+			<!-- Change class to grid10 when adding button feature -->
+			<input class="grid12 centerText" type="text" id="editPurchasedItem1" value="Purchased Item" />
+			<!-- <ul class="listItemInterface displayInlineBlock floatRight">
 				<li class="roundedRectangle"><i class="fa fa-times-circle"></i></li>
 				<li class="roundedRectangle"><i class="fa fa-trash-o"></i></li>
-			</ul>
+			</ul> -->
+
 		</div>
 	</section>
 	<footer class="contactInformation grid12 spaceAbove30 center">

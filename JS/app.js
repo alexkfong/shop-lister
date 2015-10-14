@@ -45,7 +45,7 @@ $(document).ready( function() {
 			itemsOnList++; //increment itemsOnList
 			
 			//Append to shoppingList, with custom ID based on itemsOnList
-			$('.shoppingList').append("<div id=\"listedItem" + itemsOnList + "\" class=\"listItem grid12 spaceAbove20 hidden\"><input class=\"grid10 centerText\" type=\"text\" id=\"editListItem" + itemsOnList + "\" value=\"" + itemToAdd + "\" /><ul class=\"listItemInterface displayInlineBlock floatRight\"><li class=\"roundedRectangle\"><i class=\"fa fa-check-square\"></i></li><li class=\"roundedRectangle\"><i class=\"fa fa-trash-o\"></i></li></ul></div>");
+			$('.shoppingList').append("<div id=\"listedItem" + itemsOnList + "\" class=\"listItem grid12 spaceAbove20 hidden\"><input class=\"grid12 centerText\" type=\"text\" id=\"editListItem" + itemsOnList + "\" value=\"" + itemToAdd + "\" /></div>");
 			$('#listedItem' + itemsOnList).fadeToggle("fast", "linear");
 
 			//delete text from input field
