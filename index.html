@@ -52,7 +52,7 @@ of per item UI. -->
 		<!-- Show instructions by default -->
 		<div ID="instructionsSection">
 			<h2 class="centerText">Instructions</h2>
-			<p class="centerText spaceAbove10">Add items to your shopping list by typing in the field and then clicking the <i class="fa fa-plus-circle"></i>. Delete items by removing the text and hitting the enter or return key. Check off your items by clicking its handlebar and dragging it into the purchased list. You can also sort both lists by clicking and dragging.</p>
+			<p class="centerText spaceAbove10">Add items to your shopping list by typing in the field and then clicking the <i class="fa fa-plus-circle"></i>.<br>Remove items by deleting the text followed by hitting the enter or return key.<br>Check off your items by clicking its handlebar and dragging it into the purchased list.<br>You can also sort both lists by clicking and dragging.</p>
 			<p id="hideButton" class="roundedRectangle grid2 center centerText spaceAbove20">Hide</p>
 		</div>
 
@@ -68,19 +68,17 @@ of per item UI. -->
 	</section>
 
 	<!-- 	Items on the shopping list are displayed here. Also, basic interface for manipulating the list will be here. -->
-	<section class="grid12 spaceAbove30 center">		
-		<h2 class="centerText">Your list</h2>
+	<section id="shoppingListSection" class="grid12 spaceAbove30 center">		
+		<h2 class="centerText">What you want</h2>
 		<ul id="shoppingList" class="grid12 paddingBelow50 connectedSortable">
 		</ul>
 	</section>
 	
 	<!-- 	Items on the shopping list are displayed here. Also, basic interface for manipulating the list will be here. -->
 	<section class="grid12 spaceAbove30 center">
-		<h2 class="centerText">Purchased</h2>	
+		<h2 class="centerText">What you've bought</h2>	
 		<ul id="purchasedList" class="grid12 paddingBelow50 connectedSortable">
 		</ul>
 	</section>
-	<footer class="contactInformation grid12 spaceAbove30 center">
-	</footer>
 </body>
 </html>

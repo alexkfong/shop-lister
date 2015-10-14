@@ -40,6 +40,7 @@ $(document).ready( function() {
 		}
 		// item is valid, now add to list
 		else {
+
 			itemsOnList++; //increment itemsOnList
 			
 			//Append to shoppingList, with custom ID based on itemsOnList
